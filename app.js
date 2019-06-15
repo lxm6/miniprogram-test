@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isMusicPlay: false,
+    playPageIndex: null,
+    movies: []
   }
 })

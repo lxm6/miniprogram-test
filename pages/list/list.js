@@ -1,6 +1,5 @@
 // pages/list/list.js
 let datas = require('../../datas/list-data');
-console.log(datas)
 Page({
 
   /**

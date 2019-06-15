@@ -1,5 +1,5 @@
-// pages/movie/movie.js
-const MOVIE_URL = 'http://t.yushu.im/v2/movie/top250';
+// pages/movie-detail/movie-detail.js
+
 let appDatas = getApp();
 Page({
 
@@ -7,73 +7,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movies: []
+    movie: {}
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-      wx.request({
-        url: MOVIE_URL,
-        success: (response) => {
-          this.setData({
-            movies: response.data.subjects
-          })
-          // 更新app数据
-          appDatas.data.movies = response.data.subjects;
-        }
-      });
-
+  onLoad: function(options) {
+    console.log(options);
+    this.setData({
+      movie: appDatas.data.movies[options.id]
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
